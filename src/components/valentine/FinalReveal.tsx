@@ -48,8 +48,8 @@ const FinalReveal = () => {
                 rotate: Math.random() * 720,
               }}
               transition={{
-                duration: Math.random() * 2 + 2,
-                delay: Math.random() * 0.5,
+                duration: Math.random() * 1.5 + 1,
+                delay: Math.random() * 0.3,
                 ease: 'easeOut',
               }}
             />
@@ -144,7 +144,7 @@ const FinalReveal = () => {
                     y: Math.sin((i * Math.PI * 2) / 8) * 100,
                     opacity: [1, 1, 0],
                   }}
-                  transition={{ duration: 1.5, delay: i * 0.1 }}
+                  transition={{ duration: 0.8, delay: i * 0.05 }}
                 >
                   <Heart 
                     size={24 - i * 2} 
@@ -166,7 +166,7 @@ const FinalReveal = () => {
               className="font-display text-4xl md:text-5xl text-romantic mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.15 }}
             >
               I Love You
             </motion.h2>
@@ -175,7 +175,7 @@ const FinalReveal = () => {
               className="font-body text-lg text-foreground/80 mb-2"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.25 }}
             >
               Today, tomorrow, and always
             </motion.p>
@@ -184,7 +184,7 @@ const FinalReveal = () => {
               className="font-display text-xl italic text-primary mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
+              transition={{ delay: 0.35 }}
             >
               Happy Valentine's Day ❤️
             </motion.p>
@@ -192,15 +192,30 @@ const FinalReveal = () => {
             {/* Share button */}
             <motion.button
               onClick={handleShare}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-foreground shadow-soft hover:shadow-glow transition-shadow"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-foreground shadow-soft hover:shadow-glow transition-shadow overflow-hidden relative"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              transition={{ delay: 0.5 }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 30px hsl(350 70% 60% / 0.5)' }}
+              whileTap={{ 
+                scale: 0.92, 
+                rotate: [0, -2, 2, -1, 0],
+                transition: { duration: 0.3 }
+              }}
             >
-              <Share2 size={20} />
+              <motion.div
+                animate={{ rotate: [0, 15, -15, 0] }}
+                transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
+              >
+                <Share2 size={20} />
+              </motion.div>
               <span className="font-body">Share the Love</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                initial={{ x: '-100%' }}
+                whileHover={{ x: '100%' }}
+                transition={{ duration: 0.6 }}
+              />
             </motion.button>
           </motion.div>
         )}
@@ -211,10 +226,10 @@ const FinalReveal = () => {
         className="absolute bottom-6 left-0 right-0 text-center"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
-        transition={{ delay: 1.2 }}
+        transition={{ delay: 0.6 }}
       >
         <p className="font-body text-xs text-muted-foreground/60">
-          Made with 💕 for you
+          Made by Aman 💕
         </p>
       </motion.div>
     </section>
