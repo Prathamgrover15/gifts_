@@ -48,8 +48,8 @@ const FinalReveal = () => {
                 rotate: Math.random() * 720,
               }}
               transition={{
-                duration: Math.random() * 1.5 + 1,
-                delay: Math.random() * 0.3,
+                duration: Math.random() * 0.8 + 0.5,
+                delay: Math.random() * 0.15,
                 ease: 'easeOut',
               }}
             />
@@ -64,7 +64,7 @@ const FinalReveal = () => {
           background: 'radial-gradient(circle at 50% 50%, hsl(350 60% 90% / 0.5) 0%, transparent 60%)',
         }}
         animate={isRevealed ? { scale: [1, 1.2, 1] } : {}}
-        transition={{ duration: 2, repeat: isRevealed ? Infinity : 0 }}
+        transition={{ duration: 1, repeat: isRevealed ? Infinity : 0 }}
       />
 
       <div className="max-w-sm mx-auto text-center relative z-10 px-4">
@@ -73,12 +73,12 @@ const FinalReveal = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.3 }}
           >
             <motion.div
               className="inline-block mb-6"
               animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
+              transition={{ duration: 1, repeat: Infinity }}
             >
               <Sparkles className="text-accent" size={36} />
             </motion.div>
@@ -100,25 +100,25 @@ const FinalReveal = () => {
               <motion.div
                 className="absolute inset-0 rounded-full border-4 border-primary/30"
                 animate={{ scale: [1, 1.3], opacity: [0.5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
+                transition={{ duration: 0.8, repeat: Infinity }}
               />
               <motion.div
                 className="absolute inset-0 rounded-full border-4 border-primary/30"
                 animate={{ scale: [1, 1.3], opacity: [0.5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+                transition={{ duration: 0.8, repeat: Infinity, delay: 0.3 }}
               />
 
               {/* Heart button */}
               <motion.div
                 className="w-full h-full rounded-full bg-gradient-to-br from-rose-400 to-pink-600 flex items-center justify-center shadow-heart"
-                animate={{ 
+                animate={{
                   boxShadow: [
                     '0 0 30px hsl(350 70% 60% / 0.4)',
                     '0 0 50px hsl(350 70% 60% / 0.6)',
                     '0 0 30px hsl(350 70% 60% / 0.4)',
                   ]
                 }}
-                transition={{ duration: 2, repeat: Infinity }}
+                transition={{ duration: 1, repeat: Infinity }}
               >
                 <Heart size={48} className="text-white" fill="white" />
               </motion.div>
@@ -144,11 +144,11 @@ const FinalReveal = () => {
                     y: Math.sin((i * Math.PI * 2) / 8) * 100,
                     opacity: [1, 1, 0],
                   }}
-                  transition={{ duration: 0.8, delay: i * 0.05 }}
+                  transition={{ duration: 0.4, delay: i * 0.03 }}
                 >
-                  <Heart 
-                    size={24 - i * 2} 
-                    className="text-primary" 
+                  <Heart
+                    size={24 - i * 2}
+                    className="text-primary"
                     fill="currentColor"
                   />
                 </motion.div>
@@ -156,7 +156,7 @@ const FinalReveal = () => {
 
               <motion.div
                 animate={{ scale: [1, 1.1, 1], rotate: [0, 5, -5, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                transition={{ duration: 1, repeat: Infinity }}
               >
                 <Heart size={80} className="text-primary mx-auto" fill="currentColor" />
               </motion.div>
@@ -197,15 +197,15 @@ const FinalReveal = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px hsl(350 70% 60% / 0.5)' }}
-              whileTap={{ 
-                scale: 0.92, 
+              whileTap={{
+                scale: 0.92,
                 rotate: [0, -2, 2, -1, 0],
                 transition: { duration: 0.3 }
               }}
             >
               <motion.div
                 animate={{ rotate: [0, 15, -15, 0] }}
-                transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 2 }}
+                transition={{ duration: 0.3, repeat: Infinity, repeatDelay: 1 }}
               >
                 <Share2 size={20} />
               </motion.div>
@@ -214,7 +214,7 @@ const FinalReveal = () => {
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '100%' }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.3 }}
               />
             </motion.button>
           </motion.div>

@@ -14,7 +14,7 @@ const Sparkles = ({ count = 30, colors = ['#E8B4BC', '#D4838F', '#F5E6E8', '#D4A
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
       delay: Math.random() * 3,
-      duration: Math.random() * 2 + 2,
+      duration: Math.random() * 1 + 1,
       color: colors[Math.floor(Math.random() * colors.length)],
     }));
   }, [count, colors]);

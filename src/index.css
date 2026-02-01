@@ -88,7 +88,7 @@
 
   .sparkle {
     @apply absolute w-1 h-1 rounded-full bg-accent;
-    animation: sparkle 2s ease-in-out infinite;
+    animation: sparkle 1s ease-in-out infinite;
   }
 
   .glow-text {
@@ -101,7 +101,7 @@
   }
 
   .heart-button {
-    @apply relative cursor-pointer transition-all duration-300;
+    @apply relative cursor-pointer transition-all duration-150;
     filter: drop-shadow(0 4px 12px hsl(350 80% 50% / 0.3));
   }
 
@@ -116,7 +116,7 @@
 
   .tap-ripple {
     @apply absolute rounded-full bg-primary/20 pointer-events-none;
-    animation: ripple 0.6s ease-out forwards;
+    animation: ripple 0.3s ease-out forwards;
   }
 }
 
@@ -132,7 +132,7 @@
   .text-romantic {
     @apply bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent;
     background-size: 200% auto;
-    animation: shimmer 3s ease-in-out infinite;
+    animation: shimmer 1.5s ease-in-out infinite;
   }
 
   .bg-romantic-gradient {

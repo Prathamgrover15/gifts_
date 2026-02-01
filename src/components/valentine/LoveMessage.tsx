@@ -10,7 +10,7 @@ const LoveMessage = () => {
   const words = message.split(' ');
 
   return (
-    <section 
+    <section
       ref={ref}
       className="valentine-section bg-romantic-gradient"
     >
@@ -18,7 +18,7 @@ const LoveMessage = () => {
       <motion.div
         className="absolute top-20 right-10"
         animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
       >
         <Heart size={30} className="text-primary/20 fill-primary/20" />
       </motion.div>
@@ -27,15 +27,15 @@ const LoveMessage = () => {
         {/* Glowing heart icon */}
         <motion.div
           className="mb-8 inline-block"
-          animate={{ 
+          animate={{
             scale: [1, 1.1, 1],
           }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 0.8, repeat: Infinity, ease: 'easeInOut' }}
         >
           <div className="relative">
-            <Heart 
-              size={60} 
-              className="text-primary fill-primary animate-pulse-glow" 
+            <Heart
+              size={60}
+              className="text-primary fill-primary animate-pulse-glow"
             />
             <motion.div
               className="absolute inset-0 rounded-full"
@@ -43,7 +43,7 @@ const LoveMessage = () => {
                 background: 'radial-gradient(circle, hsl(350 70% 60% / 0.4) 0%, transparent 70%)',
               }}
               animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
+              transition={{ duration: 1, repeat: Infinity }}
             />
           </div>
         </motion.div>
@@ -53,7 +53,7 @@ const LoveMessage = () => {
           className="font-display text-3xl md:text-4xl text-foreground mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
         >
           To Someone Special
         </motion.h2>
@@ -67,8 +67,8 @@ const LoveMessage = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
-                duration: 0.4,
-                delay: index * 0.08,
+                duration: 0.2,
+                delay: index * 0.04,
                 ease: 'easeOut',
               }}
             >
@@ -90,7 +90,7 @@ const LoveMessage = () => {
           <motion.div
             className="mt-2 flex items-center justify-center gap-2"
             animate={{ scale: [1, 1.05, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 1, repeat: Infinity }}
           >
             <Heart size={16} className="text-primary fill-primary" />
             <span className="font-display text-lg text-muted-foreground">Forever Yours</span>
@@ -103,7 +103,7 @@ const LoveMessage = () => {
       <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 5, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        transition={{ duration: 1, repeat: Infinity }}
       >
         <div className="flex gap-2">
           {[...Array(5)].map((_, i) => (
@@ -111,7 +111,7 @@ const LoveMessage = () => {
               key={i}
               className="w-2 h-2 rounded-full bg-primary/40"
               animate={{ opacity: [0.4, 1, 0.4] }}
-              transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.2 }}
+              transition={{ duration: 0.8, repeat: Infinity, delay: i * 0.1 }}
             />
           ))}
         </div>

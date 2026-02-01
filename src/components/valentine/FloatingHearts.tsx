@@ -13,7 +13,7 @@ const FloatingHearts = ({ count = 15 }: FloatingHeartsProps) => {
       size: Math.random() * 20 + 10,
       left: `${Math.random() * 100}%`,
       delay: Math.random() * 5,
-      duration: Math.random() * 10 + 15,
+      duration: Math.random() * 5 + 8,
       opacity: Math.random() * 0.3 + 0.1,
     }));
   }, [count]);
@@ -41,9 +41,9 @@ const FloatingHearts = ({ count = 15 }: FloatingHeartsProps) => {
             ease: 'linear',
           }}
         >
-          <Heart 
-            size={heart.size} 
-            fill="currentColor" 
+          <Heart
+            size={heart.size}
+            fill="currentColor"
             className="drop-shadow-sm"
           />
         </motion.div>

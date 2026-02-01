@@ -67,7 +67,7 @@ const MemoriesSection = () => {
     <section ref={ref} className="valentine-section bg-card relative">
       {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden">
-        <div 
+        <div
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full opacity-20"
           style={{
             background: 'radial-gradient(circle, hsl(350 60% 70%) 0%, transparent 70%)',
@@ -85,7 +85,7 @@ const MemoriesSection = () => {
           <motion.div
             className="inline-flex items-center gap-2 mb-3"
             animate={{ scale: [1, 1.05, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 1, repeat: Infinity }}
           >
             <Sparkles className="text-accent" size={20} />
             <span className="font-body text-sm uppercase tracking-widest text-muted-foreground">
@@ -107,14 +107,14 @@ const MemoriesSection = () => {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.4, ease: 'easeOut' }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             className={`absolute w-full max-w-xs bg-gradient-to-br ${memories[currentIndex].color} rounded-3xl p-8 shadow-heart`}
           >
             {/* Card decoration */}
             <motion.div
               className="absolute -top-4 -right-4"
               animate={{ rotate: [0, 10, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
+              transition={{ duration: 2, repeat: Infinity }}
             >
               <Heart size={32} className="text-primary/60 fill-primary/60" />
             </motion.div>
@@ -139,12 +139,12 @@ const MemoriesSection = () => {
             <motion.div
               className="absolute bottom-4 left-4 w-2 h-2 rounded-full bg-white/60"
               animate={{ scale: [1, 1.5, 1], opacity: [0.6, 1, 0.6] }}
-              transition={{ duration: 2, repeat: Infinity }}
+              transition={{ duration: 1, repeat: Infinity }}
             />
             <motion.div
               className="absolute top-8 left-8 w-1.5 h-1.5 rounded-full bg-white/50"
               animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-              transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+              transition={{ duration: 0.8, repeat: Infinity, delay: 0.3 }}
             />
           </motion.div>
         </div>
@@ -169,9 +169,8 @@ const MemoriesSection = () => {
                   setDirection(index > currentIndex ? 1 : -1);
                   setCurrentIndex(index);
                 }}
-                className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-primary' : 'bg-primary/30'
-                }`}
+                className={`w-2.5 h-2.5 rounded-full transition-colors ${index === currentIndex ? 'bg-primary' : 'bg-primary/30'
+                  }`}
                 whileHover={{ scale: 1.3 }}
               />
             ))}
@@ -191,7 +190,7 @@ const MemoriesSection = () => {
         <motion.p
           className="text-center mt-4 text-sm text-muted-foreground"
           animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 1, repeat: Infinity }}
         >
           Swipe to explore ✨
         </motion.p>

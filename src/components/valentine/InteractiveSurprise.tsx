@@ -4,29 +4,29 @@ import { useInView } from 'framer-motion';
 import { Heart, Gift, Mail, Star } from 'lucide-react';
 
 const surprises = [
-  { 
-    id: 'heart', 
-    icon: Heart, 
-    message: "You make my heart skip a beat 💕", 
-    color: 'bg-gradient-to-br from-rose-400 to-pink-500' 
+  {
+    id: 'heart',
+    icon: Heart,
+    message: "You make my heart skip a beat 💕",
+    color: 'bg-gradient-to-br from-rose-400 to-pink-500'
   },
-  { 
-    id: 'gift', 
-    icon: Gift, 
-    message: "You're the greatest gift in my life 🎁", 
-    color: 'bg-gradient-to-br from-amber-300 to-rose-400' 
+  {
+    id: 'gift',
+    icon: Gift,
+    message: "You're the greatest gift in my life 🎁",
+    color: 'bg-gradient-to-br from-amber-300 to-rose-400'
   },
-  { 
-    id: 'letter', 
-    icon: Mail, 
-    message: "Every word I write is about you 💌", 
-    color: 'bg-gradient-to-br from-pink-300 to-rose-400' 
+  {
+    id: 'letter',
+    icon: Mail,
+    message: "Every word I write is about you 💌",
+    color: 'bg-gradient-to-br from-pink-300 to-rose-400'
   },
-  { 
-    id: 'star', 
-    icon: Star, 
-    message: "You light up my darkest days ✨", 
-    color: 'bg-gradient-to-br from-yellow-200 to-pink-300' 
+  {
+    id: 'star',
+    icon: Star,
+    message: "You light up my darkest days ✨",
+    color: 'bg-gradient-to-br from-yellow-200 to-pink-300'
   },
 ];
 
@@ -53,7 +53,7 @@ const InteractiveSurprise = () => {
       setRevealed(prev => [...prev, id]);
     }
     setActiveMessage(message);
-    
+
     setTimeout(() => setActiveMessage(null), 2500);
   };
 
@@ -74,9 +74,9 @@ const InteractiveSurprise = () => {
               opacity: [0.3, 0.6, 0.3],
             }}
             transition={{
-              duration: 3,
+              duration: 1.5,
               repeat: Infinity,
-              delay: i * 0.3,
+              delay: i * 0.2,
             }}
           />
         ))}
@@ -92,7 +92,7 @@ const InteractiveSurprise = () => {
           <motion.div
             className="inline-block mb-3"
             animate={{ rotate: [0, 5, -5, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
+            transition={{ duration: 2, repeat: Infinity }}
           >
             <Gift className="text-primary mx-auto" size={40} />
           </motion.div>
@@ -136,31 +136,31 @@ const InteractiveSurprise = () => {
                     }}
                     initial={{ scale: 0, opacity: 0.6 }}
                     animate={{ scale: 4, opacity: 0 }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.3 }}
                   />
                 ))}
 
                 {/* Glow effect */}
                 <motion.div
                   className="absolute inset-0 bg-white/0"
-                  animate={isRevealed ? { 
+                  animate={isRevealed ? {
                     backgroundColor: ['rgba(255,255,255,0)', 'rgba(255,255,255,0.3)', 'rgba(255,255,255,0)']
                   } : {}}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.3 }}
                 />
 
                 {/* Icon */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.div
-                    animate={isRevealed ? { 
+                    animate={isRevealed ? {
                       scale: [1, 1.3, 1],
                       rotate: [0, 10, -10, 0]
                     } : {}}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <Icon 
-                      size={48} 
-                      className="text-white drop-shadow-lg" 
+                    <Icon
+                      size={48}
+                      className="text-white drop-shadow-lg"
                       fill={isRevealed ? 'currentColor' : 'none'}
                     />
                   </motion.div>
@@ -185,7 +185,7 @@ const InteractiveSurprise = () => {
                             y: Math.sin((i * Math.PI * 2) / 6) * 50,
                           }}
                           exit={{ opacity: 0 }}
-                          transition={{ duration: 0.6, delay: i * 0.05 }}
+                          transition={{ duration: 0.3, delay: i * 0.03 }}
                         />
                       ))}
                     </>
@@ -245,9 +245,8 @@ const InteractiveSurprise = () => {
             {surprises.map((item) => (
               <motion.div
                 key={item.id}
-                className={`w-3 h-3 rounded-full transition-colors ${
-                  revealed.includes(item.id) ? 'bg-primary' : 'bg-primary/20'
-                }`}
+                className={`w-3 h-3 rounded-full transition-colors ${revealed.includes(item.id) ? 'bg-primary' : 'bg-primary/20'
+                  }`}
                 animate={revealed.includes(item.id) ? { scale: [1, 1.3, 1] } : {}}
               />
             ))}
