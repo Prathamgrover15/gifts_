@@ -229,7 +229,7 @@ const FinalReveal = () => {
         transition={{ delay: 0.6 }}
       >
         <p className="font-body text-xs text-muted-foreground/60">
-          Made by Aman 💕
+          Made by Hubby aka Pratham 💕
         </p>
       </motion.div>
     </section>
